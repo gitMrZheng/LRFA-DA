@@ -25,7 +25,7 @@ from utils.metric import accuracy, ConfusionMatrix
 from utils.meter import AverageMeter, ProgressMeter
 from utils.logger import CompleteLogger
 from utils.analysis import collect_feature, tsne, a_distance
-from getCovidDataset import getDataset,MultipleApply
+from getDataset import getDataset,MultipleApply
 import numpy as np
 from randaugment import RandAugment
 from discri import DomainDiscriminator,DomainAdversarialLoss,Bottleneck
