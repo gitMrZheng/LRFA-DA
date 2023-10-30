@@ -34,7 +34,7 @@ class MultipleApply:
 
 class getDataset(Dataset):
 
-    def __init__(self, root, resize, mode,transform=None,s_t=None,is_labeled=None):
+    def __init__(self, root, resize, mode,transform=None,s_t=None):
         super(getDataset, self).__init__()
 
         self.root = root
