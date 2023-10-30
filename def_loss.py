@@ -73,15 +73,6 @@ class ImageClassifierHead(nn.Module):
 
     def forward(self, inputs: torch.Tensor) -> torch.Tensor:
         return self.head(inputs)
-def analyse(gt_list, p_list):
-    p_list[p_list >= 0.5] = 1
-    p_list[p_list < 0.5] = 0
-    t_open, f_narrow, f_open, t_narrow = metrics.confusion_matrix(gt_list, p_list).ravel()
-    F1 = f1_score(gt_list, p_list)
-    accuracy = (t_narrow + t_open) / (t_narrow + t_open + f_narrow + f_open)
-    precision = t_narrow / (t_narrow + f_narrow)
-    recall = t_narrow / (t_narrow + f_open)
-    return F1,precision,recall
 def multi_analyse(gt_list, p_list):
     gt_list=gt_list.T
     p_list=p_list.T
